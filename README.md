@@ -2,7 +2,7 @@
 
 ## Dependencies
 
-### `requirements.txt`
+### Install a package using `requirements.txt`
 - Insert all dependencies that you need inside the `requirements.txt` file, as following:
   ```
   ```
@@ -13,7 +13,7 @@
 - Install dependencies:
   `pip install -r requirements.txt`
 
-### `setuptools` and `setup.py`
+### Install a package using `setuptools` and `setup.py`
 
 - Setting up `setup.py`
 
