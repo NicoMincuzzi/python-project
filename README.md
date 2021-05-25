@@ -19,19 +19,19 @@
 
 ### [Poetry](https://github.com/python-poetry/poetry)
 
-- Prerequisites:
+- **Prerequisites**
 
   * Install [pyenv](https://github.com/pyenv/pyenv#installation), which lets you easily switch between multiple versions of Python. In alternatives, you can use [pyenv-installer](https://github.com/pyenv/pyenv-installer)
 
   * Install [Poetry](https://github.com/python-poetry/poetry#installation), which is a tool for dependency management and packaging in Python. 
 
-- Introduction
+- **Introduction**
   
   `poetry` only needs one file to do all of that: the new, [standardized](https://www.python.org/dev/peps/pep-0518/) `pyproject.toml`.
 
   In other words, poetry uses `pyproject.toml` to replace `setup.py`, `requirements.txt`, `setup.cfg`, `MANIFEST.in` and the newly added `Pipfile`.
 
-- Project setup
+- **Project setup**
   
   First, let's create our new project, let's call it `poetry-demo`:
 
