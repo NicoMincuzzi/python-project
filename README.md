@@ -31,4 +31,39 @@
 
   In other words, poetry uses `pyproject.toml` to replace `setup.py`, `requirements.txt`, `setup.cfg`, `MANIFEST.in` and the newly added `Pipfile`.
 
+- Project setup
+  
+  First, let's create our new project, let's call it `poetry-demo`:
+
+  `poetry new poetry-demo`
+
+  This will create the `poetry-demo` directory with the following content:
+  
+  ```
+  poetry-demo
+  ├── pyproject.toml
+  ├── README.rst
+  ├── poetry_demo
+  │   └── __init__.py
+  └── tests
+      ├── __init__.py
+      └── test_poetry_demo.py
+  ```
+
+  The `pyproject.toml` file is what is the most important here. This will orchestrate your project and its dependencies. For now, it looks like this:
+
+  ```
+  [tool.poetry]
+  name = "poetry-demo"
+  version = "0.1.0"
+  description = ""
+  authors = ["Sébastien Eustace <sebastien@eustace.io>"]
+
+  [tool.poetry.dependencies]
+  python = "*"
+
+  [tool.poetry.dev-dependencies]
+  pytest = "^3.4"
+  ```
+
 ## Artifacts
