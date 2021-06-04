@@ -131,9 +131,11 @@ usage: setup.py [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
 
 ## Prerequisites
 
-  * Install [pyenv](https://github.com/pyenv/pyenv#installation), which lets you easily switch between multiple versions of Python. In alternatives, you can use [pyenv-installer](https://github.com/pyenv/pyenv-installer)
+  * Install [pyenv](https://github.com/pyenv/pyenv#installation)
+    - which lets you easily switch between multiple versions of Python. In alternatives, you can use [pyenv-installer](https://github.com/pyenv/pyenv-installer)
 
-  * Install [Poetry](https://github.com/python-poetry/poetry#installation), which is a tool for dependency management and packaging in Python. 
+  * Install [Poetry](https://github.com/python-poetry/poetry#installation)
+    - tool for dependency management and packaging in Python. 
 
 ## Introduction
   
