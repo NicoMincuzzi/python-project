@@ -4,13 +4,25 @@
 
 ### Install a package using `requirements.txt`
 - Insert all dependencies that you need inside the `requirements.txt` file, as following:
+  
   ```
+  Flask==1.1.2
   ```
-- Create a virualenv and run it:
-  1. `virtualenv venv`
-  2. `source venv/bin/activate`
+  
+- Set up a virtual environment:
+  
+  `virtualenv venv`
+  
+  This will create a new virtual environment named venv using the version of Python that you have installed on your system.
+  
+- Activate the virtual environment by sourcing the activation script:
+  
+  `source venv/bin/activate`
+  
+  After executing this command, your prompt will change to indicate that you’re now operating from within the virtual environment.
  
-- Install dependencies:
+- Install all dependencies:
+  
   `pip install -r requirements.txt`
 
 ### Install a package using `setuptools` and `setup.py`
