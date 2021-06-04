@@ -11,23 +11,123 @@
   
 - Set up a virtual environment:
   
-  `$ virtualenv venv`
+  ``` sh
+  $ virtualenv venv
+  ```
   
   This will create a new virtual environment named venv using the version of Python that you have installed on your system.
   
 - Activate the virtual environment by sourcing the activation script:
   
-  `$ source venv/bin/activate`
+  ``` sh
+  $ source venv/bin/activate
+  ```
   
   After executing this command, your prompt will change to indicate that you’re now operating from within the virtual environment.
  
 - Install all dependencies:
   
-  `$ pip install -r requirements.txt`
+  ``` sh
+  $ pip install -r requirements.txt
+  ```
 
 ### Install a package using `setuptools` and `setup.py`
 
-- Setting up `setup.py`
+Create the following project structure:
+
+  ```
+  python-demo
+  ├── README.md
+  ├── LICENSE
+  ├── setup.py
+  ├── package_demo
+  │   └── __init__.py
+  └── tests
+      ├── __init__.py
+      └── test_python_demo.py
+  ```
+The contents of setup.py is just pure python:
+  ``` python
+  import os
+  from setuptools import setup
+
+  # Utility function to read the README file.
+  # Used for the long_description.  It's nice, because now 1) we have a top level
+  # README file and 2) it's easier to type in the README file than to put a raw
+  # string in below ...
+  def read(fname):
+      return open(os.path.join(os.path.dirname(__file__), fname)).read()
+
+  setup(
+      name = "an_example_pypi_project",
+      version = "0.0.4",
+      author = "Andrew Carter",
+      author_email = "andrewjcarter@gmail.com",
+      description = ("An demonstration of how to create, document, and publish "
+                                     "to the cheese shop a5 pypi.org."),
+      license = "BSD",
+      keywords = "example documentation tutorial",
+      url = "http://packages.python.org/an_example_pypi_project",
+      packages=['an_example_pypi_project', 'tests'],
+      long_description=read('README'),
+      classifiers=[
+          "Development Status :: 3 - Alpha",
+          "Topic :: Utilities",
+          "License :: OSI Approved :: BSD License",
+      ],
+  )
+  ```
+
+Using setup.py
+The basic usage of setup.py is:
+``` sh
+$ python setup.py <some_command> <options>
+```
+To see all commands type:
+``` sh
+$ python setup.py --help-commands
+```
+And you will get:
+```
+Standard commands:
+  build             build everything needed to install
+  build_py          "build" pure Python modules (copy to build directory)
+  build_ext         build C/C++ extensions (compile/link to build directory)
+  build_clib        build C/C++ libraries used by Python extensions
+  build_scripts     "build" scripts (copy and fixup #! line)
+  clean             clean up temporary files from 'build' command
+  install           install everything from build directory
+  install_lib       install all Python modules (extensions and pure Python)
+  install_headers   install C/C++ header files
+  install_scripts   install scripts (Python or otherwise)
+  install_data      install data files
+  sdist             create a source distribution (tarball, zip file, etc.)
+  register          register the distribution with the Python package index
+  bdist             create a built (binary) distribution
+  bdist_dumb        create a "dumb" built distribution
+  bdist_rpm         create an RPM distribution
+  bdist_wininst     create an executable installer for MS Windows
+  upload            upload binary package to PyPI
+
+Extra commands:
+  rotate            delete older distributions, keeping N newest files
+  develop           install package in 'development mode'
+  setopt            set an option in setup.cfg or another config file
+  saveopts          save supplied options to setup.cfg or other config file
+  egg_info          create a distribution's .egg-info directory
+  upload_sphinx     Upload Sphinx documentation to PyPI
+  install_egg_info  Install an .egg-info directory for the package
+  alias             define a shortcut to invoke one or more commands
+  easy_install      Find/get/install Python packages
+  bdist_egg         create an "egg" distribution
+  test              run unit tests after in-place build
+  build_sphinx      Build Sphinx documentation
+
+usage: setup.py [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
+   or: setup.py --help [cmd1 cmd2 ...]
+   or: setup.py --help-commands
+   or: setup.py cmd --help
+```
 
 ### Poetry
 
