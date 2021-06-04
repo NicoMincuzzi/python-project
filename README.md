@@ -187,7 +187,7 @@ Instead of creating a new project, Poetry can be used to *'initialise'* a pre-po
   poetry init
   ```
 
-###Specifying dependencies
+### Specifying dependencies
 
 If you want to add dependencies to your project, you can specify them in the `tool.poetry.dependencies` section.
 
@@ -196,11 +196,9 @@ If you want to add dependencies to your project, you can specify them in the `to
 pendulum = "^1.4"
 ```
 
-As you can see, it takes a mapping of package names and version constraints.
+Poetry uses this information to search for the right set of files in package "repositories" that you register in the `tool.poetry.repositories` section, or on PyPI by default.
 
-Poetry uses this information to search for the right set of files in package "repositories" that you register in the tool.poetry.repositories section, or on PyPI by default.
-
-Also, instead of modifying the pyproject.toml file by hand, you can use the add command.
+Also, instead of modifying the `pyproject.toml` file by hand, you can use the add command.
 
 ``` sh
 $ poetry add pendulum
@@ -210,40 +208,36 @@ It will automatically find a suitable version constraint and install the package
 
 ## Using your virtual environment
 
-By default, poetry creates a virtual environment in {cache-dir}/virtualenvs ({cache-dir}\virtualenvs on Windows). You can change the cache-dir value by editing the poetry config. Additionally, you can use the virtualenvs.in-project configuration variable to create virtual environment within your project directory.
+By default, poetry creates a virtual environment in `{cache-dir}/virtualenvs` (`{cache-dir}\virtualenvs` on Windows). You can change the `cache-dir` value by editing the poetry config. Additionally, you can use the `virtualenvs.in-project` configuration variable to create virtual environment within your project directory.
 
 There are several ways to run commands within this virtual environment.
 
 ### Using poetry `run`
-To run your script simply use poetry run python your_script.py. Likewise if you have command line tools such as pytest or black you can run them using poetry run pytest.
+To run your script simply use `$ poetry run python your_script.py`. Likewise if you have command line tools such as `pytest` or `black` you can run them using `$ poetry run pytest`.
 
 ### Activating the virtual environment
 The easiest way to activate the virtual environment is to create a new shell with poetry shell. To deactivate the virtual environment and exit this new shell type exit. To deactivate the virtual environment without leaving the shell use deactivate.
 
-Installing dependencies
-To install the defined dependencies for your project, just run the install command.
+## Installing dependencies
+To install the defined dependencies for your project, just run the `install` command.
 
-poetry install
+``` sh
+$ poetry install
+```
+
 When you run this command, one of two things may happen:
 
-Installing without poetry.lock
+### Installing without poetry.lock
 If you have never run the command before and there is also no poetry.lock file present, Poetry simply resolves all dependencies listed in your pyproject.toml file and downloads the latest version of their files.
 
 When Poetry has finished installing, it writes all of the packages and the exact versions of them that it downloaded to the poetry.lock file, locking the project to those specific versions. You should commit the poetry.lock file to your project repo so that all people working on the project are locked to the same versions of dependencies (more below).
 
-Installing with poetry.lock
+### Installing with poetry.lock
 This brings us to the second scenario. If there is already a poetry.lock file as well as a pyproject.toml file when you run poetry install, it means either you ran the install command before, or someone else on the project ran the install command and committed the poetry.lock file to the project (which is good).
 
 Either way, running install when a poetry.lock file is present resolves and installs all dependencies that you listed in pyproject.toml, but Poetry uses the exact versions listed in poetry.lock to ensure that the package versions are consistent for everyone working on your project. As a result you will have all dependencies requested by your pyproject.toml file, but they may not all be at the very latest available versions (some of the dependencies listed in the poetry.lock file may have released newer versions since the file was created). This is by design, it ensures that your project does not break because of unexpected changes in dependencies.
 
-Commit your poetry.lock file to version control
+### Commit your poetry.lock file to version control
 Committing this file to VC is important because it will cause anyone who sets up the project to use the exact same versions of the dependencies that you are using. Your CI server, production machines, other developers in your team, everything and everyone runs on the same dependencies, which mitigates the potential for bugs affecting only some parts of the deployments. Even if you develop alone, in six months when reinstalling the project you can feel confident the dependencies installed are still working even if your dependencies released many new versions since then. (See note below about using the update command.)
 
-For libraries it is not necessary to commit the lock file.
-
-Installing dependencies only
-The current project is installed in editable mode by default.
-
-If you want to install the dependencies only, run the install command with the --no-root flag:
-
-poetry install --no-root
+**N.B.** For libraries it is not necessary to commit the lock file.
