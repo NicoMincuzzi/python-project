@@ -11,19 +11,19 @@
   
 - Set up a virtual environment:
   
-  `virtualenv venv`
+  `$ virtualenv venv`
   
   This will create a new virtual environment named venv using the version of Python that you have installed on your system.
   
 - Activate the virtual environment by sourcing the activation script:
   
-  `source venv/bin/activate`
+  `$ source venv/bin/activate`
   
   After executing this command, your prompt will change to indicate that you’re now operating from within the virtual environment.
  
 - Install all dependencies:
   
-  `pip install -r requirements.txt`
+  `$ pip install -r requirements.txt`
 
 ### Install a package using `setuptools` and `setup.py`
 
