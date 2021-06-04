@@ -17,7 +17,7 @@
 
 - Setting up `setup.py`
 
-### [Poetry](https://github.com/python-poetry/poetry)
+### Poetry
 
 - **Prerequisites**
 
