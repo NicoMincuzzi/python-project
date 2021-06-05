@@ -45,7 +45,7 @@ Create the following project structure:
       └── test_python_demo.py
   ```
 The contents of setup.py is just pure python:
-  ``` python
+  ```python
   import os
   from setuptools import setup
 
@@ -126,6 +126,24 @@ usage: setup.py [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
    or: setup.py --help-commands
    or: setup.py cmd --help
 ```
+
+You have most likely used a requirements.txt file before. Now that you are creating a setup.py, you can specify your
+dependencies in the `install_requires argument`. For example, in a project you may have:
+
+```python
+setup(
+    ...
+    install_requires=[
+        'PyYAML',
+        'pandas==0.23.3',
+        'numpy>=1.14.5',
+        'matplotlib>=2.2.0,,
+        'jupyter'
+    ]
+)
+```
+
+You may specify requirements without a version (PyYAML), pin a version (pandas==0.23.3), specify a minimum version ('numpy>=1.14.5) or set a range of versions (matplotlib>=2.2.0,<3.0.0). These requirements will automatically be installed by pip when you install your package.
 
 ## Poetry
 
