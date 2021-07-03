@@ -165,7 +165,7 @@ You may specify requirements without a version (PyYAML), pin a version (pandas==
   
   First, let's create our new project, let's call it `poetry-demo`:
 
-  `poetry new poetry-demo`
+  `$ poetry new poetry-demo`
 
   This will create the `poetry-demo` directory with the following content:
   
@@ -202,7 +202,7 @@ Instead of creating a new project, Poetry can be used to *'initialise'* a pre-po
 
   ``` sh
   cd pre-existing-project
-  poetry init
+  $ poetry init
   ```
 
 ### Specifying dependencies
@@ -229,7 +229,7 @@ It will automatically find a suitable version constraint and install the package
 By default, poetry creates a virtual environment in `{cache-dir}/virtualenvs` (`{cache-dir}\virtualenvs` on Windows). You can change the `cache-dir` value by editing the poetry config. Additionally, you can use the `virtualenvs.in-project` configuration variable to create virtual environment within your project directory.
 
 ```sh
-poetry config virtualenvs.in-project true
+$ poetry config virtualenvs.in-project true
 ```
 
 There are several ways to run commands within this virtual environment.
