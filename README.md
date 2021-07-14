@@ -1,7 +1,7 @@
 # python-project
 
 ## Install a package using `requirements.txt`
-- Insert all dependencies that you need inside the `requirements.txt` file, as following:
+- Insert all dependencies that you need inside the `requirements.txt` file, for example as following:
   
   ```
   Flask==1.1.2
