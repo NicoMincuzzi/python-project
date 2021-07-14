@@ -13,7 +13,7 @@
   $ virtualenv venv
   ```
   
-  This will create a new virtual environment named venv using the version of Python that you have installed on your system.
+  This will create a new virtual environment named `venv` using the version of Python that you have installed on your system.
   
 - Activate the virtual environment by sourcing the activation script:
   
