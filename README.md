@@ -1,5 +1,7 @@
 # python-project
 
+The aim is to provide a guide about how create a new Python project, configure it and show how manage the dependencies and packaging. 
+
 ## Install a package using `requirements.txt`
 1. Insert all dependencies that you need inside the `requirements.txt` file, for example as following:
   
