@@ -1,13 +1,13 @@
 # python-project
 
 ## Install a package using `requirements.txt`
-- Insert all dependencies that you need inside the `requirements.txt` file, for example as following:
+1. Insert all dependencies that you need inside the `requirements.txt` file, for example as following:
   
   ```
   Flask==1.1.2
   ```
   
-- Set up a virtual environment:
+2. Set up a virtual environment:
   
   ``` sh
   $ virtualenv venv
@@ -15,7 +15,7 @@
   
   This will create a new virtual environment named `venv` using the version of Python that you have installed on your system.
   
-- Activate the virtual environment by sourcing the activation script:
+3. Activate the virtual environment by sourcing the activation script:
   
   ``` sh
   $ source venv/bin/activate
@@ -23,11 +23,13 @@
   
   After executing this command, your prompt will change to indicate that you’re now operating from within the virtual environment.
  
-- Install all dependencies:
+4. Install all dependencies:
   
   ``` sh
   $ pip install -r requirements.txt
   ```
+
+Now you are ready to coding! ;)
 
 ## Install a package using `setuptools` and `setup.py`
 
