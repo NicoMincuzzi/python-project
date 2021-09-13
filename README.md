@@ -155,6 +155,8 @@ You may specify requirements without a version (PyYAML), pin a version (pandas==
 
   * Install [pyenv](https://github.com/pyenv/pyenv#installation)
     - which lets you easily switch between multiple versions of Python. In alternatives, you can use [pyenv-installer](https://github.com/pyenv/pyenv-installer)
+    
+    - The most common commands of are [here](https://github.com/pyenv/pyenv/blob/master/COMMANDS.md)
 
   * Install [Poetry](https://github.com/python-poetry/poetry#installation)
     - tool for dependency management and packaging in Python. 
